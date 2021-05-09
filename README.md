@@ -138,6 +138,5 @@ A solução adotada foi trabalhar o dado no conceito de data lake com 3 camadas:
 
 -   Acrescentar o Google Cloud Composer para orquestração do fluxo do pipeline.
 
--   Criar um processo de validação e aviso dos possíveis dados ausentes nos
-    cadastros aos data owner.
+-   Criar um processo de validação e aviso, aos data owner dos dados, sobre os possíveis dados ausentes nos cadastros.
 
