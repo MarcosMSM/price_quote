@@ -56,7 +56,8 @@ O Data Studio acessa os dados desta camada para criação do dashboard.
 ### Diretórios do projeto:
 
 - data /: arquivos csv de origem
-- db /: view materializadas da refined.
+- db /: view materializadas da refined
+- flow /: flow Dataprep
 
 ### Modelo Conceitual Refined Zone:
 

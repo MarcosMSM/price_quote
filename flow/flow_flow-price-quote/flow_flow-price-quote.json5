@@ -1,0 +1,976 @@
+{
+  type: 'flow',
+  kind: 'artifact',
+  metadata: {
+    trifactaVersion: '8.2.0+119.20210423054209.244ce07',
+    exportedAt: '2021-05-09T18:46:48.517Z',
+    exportedBy: 220513,
+    uuid: 'e9293f50-b0f6-11eb-80bb-49b3af96ea2a',
+    comment: '',
+    primaryFlowIds: [
+      488059,
+    ],
+    edition: 'Dataprep',
+    lastMigration: '20210309152220',
+  },
+  data: {
+    artifacts: [],
+    connections: [],
+    flows: [
+      {
+        settings: {
+          optimize: 'default',
+          optimizers: {
+            columnPruning: 'enabled',
+            filterPushdown: 'enabled',
+            columnPruningOnSource: 'enabled',
+            filterPushdownOnSource: 'enabled',
+            expressionPushdown: 'disabled',
+            joinPushdown: 'disabled',
+            unionPushdown: 'disabled',
+            aggPushdown: 'disabled',
+          },
+          dbOverrides: {},
+        },
+        id: 488059,
+        name: 'flow-price-quote',
+        description: null,
+        defaultOutputDir: null,
+        fromExampleFlowHash: null,
+        fromExampleFlowName: null,
+        flownodes: [
+          {
+            id: 2566939,
+            scriptId: 2327919,
+            flowNodeId: null,
+            wrangled: false,
+            referenceId: null,
+          },
+          {
+            id: 2566940,
+            scriptId: 2327920,
+            flowNodeId: null,
+            wrangled: true,
+            referenceId: null,
+          },
+        ],
+        notes: [],
+        flowgraphvertices: [
+          {
+            id: 1515209,
+            objectType: 'flownode',
+            objectId: 2566939,
+            x: 4,
+            y: 65,
+            width: null,
+            height: null,
+          },
+          {
+            id: 1515210,
+            objectType: 'flownode',
+            objectId: 2566940,
+            x: 244,
+            y: 65,
+            width: null,
+            height: null,
+          },
+          {
+            id: 1515211,
+            objectType: 'outputobject',
+            objectId: 467978,
+            x: 484,
+            y: 65,
+            width: null,
+            height: null,
+          },
+        ],
+        flowedges: [
+          {
+            id: 2208015,
+            inFlowNodeId: 2566939,
+            inPortId: null,
+            outFlowNodeId: 2566940,
+            outPortId: null,
+          },
+        ],
+        references: [],
+        flowrunparameteroverrides: [],
+        runparameters: [],
+        recipes: [
+          {
+            id: 2327919,
+            name: 'price_quote.csv',
+            description: null,
+            active: true,
+            nextPortId: 1,
+            steps: [
+              {
+                columnMetadata: null,
+                task: {
+                  annotations: {
+                    hidden: true,
+                  },
+                  kind: 'task',
+                  type: 'Load',
+                  parameters: {
+                    format: {
+                      annotations: {},
+                      kind: 'func',
+                      type: 'FormatBlob',
+                      parameters: {},
+                    },
+                    location: {
+                      kind: 'constant',
+                      type: 'String',
+                      value: 'id://1063432',
+                    },
+                    enableLineage: {
+                      kind: 'constant',
+                      type: 'Bool',
+                      value: true,
+                    },
+                    as: {
+                      kind: 'array',
+                      type: 'Array',
+                      value: [
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'column1',
+                        },
+                      ],
+                    },
+                  },
+                  outputName: 'original_datasource_1063432',
+                },
+                tableData: null,
+                portId: null,
+                id: 13808975,
+                hash: 'a7a68e515f7f9159161231a1791dee06567c674e',
+                pbemappingartifacts: [],
+                targetmappingartifacts: [],
+                dependencies: [],
+              },
+              {
+                columnMetadata: null,
+                task: {
+                  annotations: {
+                    outputColumnAnnotations: {
+                      column1: {
+                        type: [
+                          'String',
+                        ],
+                        _likely_types: [
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                          [
+                            'Map',
+                          ],
+                        ],
+                      },
+                    },
+                  },
+                  kind: 'task',
+                  type: 'SplitRows',
+                  parameters: {
+                    on: {
+                      kind: 'constant',
+                      type: 'String',
+                      value: '\n',
+                    },
+                    col: {
+                      kind: 'column',
+                      type: 'Column',
+                      value: 'column1',
+                      relation: null,
+                    },
+                  },
+                  outputName: null,
+                },
+                tableData: null,
+                portId: null,
+                id: 13808976,
+                hash: '78fae58ffc390e6c061a056bb0a4ec0317c9f8f6',
+                pbemappingartifacts: [],
+                targetmappingartifacts: [],
+                dependencies: [],
+              },
+              {
+                columnMetadata: null,
+                task: {
+                  annotations: {
+                    outputColumnAnnotations: {
+                      column2: {
+                        type: [
+                          'String',
+                        ],
+                        _likely_types: [
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                          [
+                            'Map',
+                          ],
+                        ],
+                      },
+                      column3: {
+                        type: [
+                          'String',
+                        ],
+                        _likely_types: [
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                          [
+                            'Map',
+                          ],
+                        ],
+                      },
+                      column4: {
+                        type: [
+                          'Datetime',
+                          'yy-mm-dd',
+                          'yyyy*mm*dd',
+                        ],
+                        _likely_types: [
+                          [
+                            'Datetime',
+                            'yy-mm-dd',
+                            'yyyy*mm*dd',
+                          ],
+                          [
+                            'Datetime',
+                            'yy-dd-mm',
+                            'yyyy*dd*mm',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                        ],
+                      },
+                      column5: {
+                        type: [
+                          'Integer',
+                        ],
+                        _likely_types: [
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Float',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                        ],
+                      },
+                      column6: {
+                        type: [
+                          'Integer',
+                        ],
+                        _likely_types: [
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Float',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                        ],
+                      },
+                      column7: {
+                        type: [
+                          'Bool',
+                        ],
+                        _likely_types: [
+                          [
+                            'Bool',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                        ],
+                      },
+                      column8: {
+                        type: [
+                          'Integer',
+                        ],
+                        _likely_types: [
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Float',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                        ],
+                      },
+                      column9: {
+                        type: [
+                          'Float',
+                        ],
+                        _likely_types: [
+                          [
+                            'Float',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                        ],
+                      },
+                    },
+                  },
+                  kind: 'task',
+                  type: 'Split',
+                  parameters: {
+                    col: {
+                      kind: 'column',
+                      type: 'Column',
+                      value: 'column1',
+                      relation: null,
+                    },
+                    type: {
+                      kind: 'bundle',
+                      type: 'Bundle',
+                      value: 'on',
+                    },
+                    on: {
+                      kind: 'constant',
+                      type: 'String',
+                      value: ',',
+                    },
+                    limit: {
+                      kind: 'constant',
+                      type: 'Integer',
+                      value: 7,
+                    },
+                    quote: {
+                      kind: 'constant',
+                      type: 'String',
+                      value: '"',
+                    },
+                    as: {
+                      kind: 'array',
+                      type: 'Array',
+                      value: [
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'column2',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'column3',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'column4',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'column5',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'column6',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'column7',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'column8',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'column9',
+                        },
+                      ],
+                    },
+                  },
+                  outputName: null,
+                },
+                tableData: null,
+                portId: null,
+                id: 13808978,
+                hash: '46d009889a0c550590fd220ad45a170ea545de4f',
+                pbemappingartifacts: [],
+                targetmappingartifacts: [],
+                dependencies: [],
+              },
+              {
+                columnMetadata: null,
+                task: {
+                  annotations: {
+                    outputColumnAnnotations: {
+                      tube_assembly_id: {
+                        type: [
+                          'String',
+                        ],
+                        _likely_types: [
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                          [
+                            'Map',
+                          ],
+                        ],
+                      },
+                      supplier: {
+                        type: [
+                          'String',
+                        ],
+                        _likely_types: [
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                          [
+                            'Map',
+                          ],
+                        ],
+                      },
+                      quote_date: {
+                        type: [
+                          'Datetime',
+                          'yy-mm-dd',
+                          'yyyy*mm*dd',
+                        ],
+                        _likely_types: [
+                          [
+                            'Datetime',
+                            'yy-mm-dd',
+                            'yyyy*mm*dd',
+                          ],
+                          [
+                            'Datetime',
+                            'yy-dd-mm',
+                            'yyyy*dd*mm',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                        ],
+                      },
+                      annual_usage: {
+                        type: [
+                          'Integer',
+                        ],
+                        _likely_types: [
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Float',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                        ],
+                      },
+                      min_order_quantity: {
+                        type: [
+                          'Integer',
+                        ],
+                        _likely_types: [
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Float',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                        ],
+                      },
+                      bracket_pricing: {
+                        type: [
+                          'Bool',
+                        ],
+                        _likely_types: [
+                          [
+                            'Bool',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                        ],
+                      },
+                      quantity: {
+                        type: [
+                          'Integer',
+                        ],
+                        _likely_types: [
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Float',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                        ],
+                      },
+                      cost: {
+                        type: [
+                          'Float',
+                        ],
+                        _likely_types: [
+                          [
+                            'Float',
+                          ],
+                          [
+                            'String',
+                          ],
+                          [
+                            'Integer',
+                          ],
+                          [
+                            'Phone',
+                          ],
+                          [
+                            'SSN',
+                          ],
+                        ],
+                      },
+                    },
+                  },
+                  kind: 'task',
+                  type: 'Header',
+                  parameters: {
+                    sanitize: {
+                      kind: 'constant',
+                      type: 'Bool',
+                      value: false,
+                    },
+                    as: {
+                      kind: 'array',
+                      type: 'Array',
+                      value: [
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'tube_assembly_id',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'supplier',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'quote_date',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'annual_usage',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'min_order_quantity',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'bracket_pricing',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'quantity',
+                        },
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'cost',
+                        },
+                      ],
+                    },
+                  },
+                  outputName: null,
+                },
+                tableData: {
+                  column2: 'tube_assembly_id',
+                  column3: 'supplier',
+                  column4: 'quote_date',
+                  column5: 'annual_usage',
+                  column6: 'min_order_quantity',
+                  column7: 'bracket_pricing',
+                  column8: 'quantity',
+                  column9: 'cost',
+                },
+                portId: null,
+                id: 13808977,
+                hash: 'ae20f922af0743c52d5fa939432aae486207e3dd',
+                pbemappingartifacts: [],
+                targetmappingartifacts: [],
+                dependencies: [],
+              },
+            ],
+            dqScriptRules: [],
+          },
+          {
+            id: 2327920,
+            name: 'price_quote',
+            description: null,
+            active: true,
+            nextPortId: 1,
+            steps: [
+              {
+                columnMetadata: {
+                  tube_assembly_id: {
+                    id: '2ro61z7',
+                  },
+                  supplier: {
+                    id: '9oebek',
+                  },
+                  quote_date: {
+                    id: '32ebh3n',
+                  },
+                  annual_usage: {
+                    id: 'wi2bh7',
+                  },
+                  min_order_quantity: {
+                    id: 'ukwf51',
+                  },
+                  bracket_pricing: {
+                    id: 'xzj1tb',
+                  },
+                  quantity: {
+                    id: '29x6ex3',
+                  },
+                  cost: {
+                    id: '2huby9',
+                  },
+                  TRIFACTA__FILE_LINEAGE_INFO: {
+                    id: '7dq843',
+                  },
+                },
+                task: {
+                  annotations: {
+                    hidden: true,
+                  },
+                  kind: 'task',
+                  type: 'Load',
+                  parameters: {
+                    format: {
+                      annotations: {},
+                      kind: 'func',
+                      type: 'FormatBlob',
+                      parameters: {},
+                    },
+                    location: {
+                      kind: 'constant',
+                      type: 'String',
+                      value: 'portId://null',
+                    },
+                    enableLineage: {
+                      kind: 'constant',
+                      type: 'Bool',
+                      value: true,
+                    },
+                    as: {
+                      kind: 'array',
+                      type: 'Array',
+                      value: [
+                        {
+                          kind: 'constant',
+                          type: 'String',
+                          value: 'column1',
+                        },
+                      ],
+                    },
+                  },
+                  outputName: 'original_datasource_1063432',
+                },
+                tableData: null,
+                portId: null,
+                id: 13808979,
+                hash: '7a55b12245cecaaf00ce47362122914595df8e20',
+                pbemappingartifacts: [],
+                targetmappingartifacts: [],
+                dependencies: [],
+              },
+            ],
+            dqScriptRules: [],
+          },
+        ],
+        outputobjects: [
+          {
+            id: 467978,
+            execution: 'dataflow',
+            profiler: true,
+            flowNodeId: 2566940,
+            isAdhoc: true,
+            publications: [
+              {
+                path: [
+                  'dasa-exam',
+                  'trusted',
+                ],
+                parameters: {
+                  externalTableLocation: null,
+                  isDeltaTable: 'false',
+                  isExternalTable: 'false',
+                },
+                id: 490149,
+                tableName: 'industry_price_quote',
+                targetType: 'bigquery',
+                action: 'truncateAndLoad',
+                connectionId: null,
+                runParameters: [],
+              },
+            ],
+            writesettings: [
+              {
+                delim: ',',
+                id: 641246,
+                path: 'gs://dasa-trusted-zone/industry/price_quote.avro',
+                action: 'overwrite',
+                format: 'avro',
+                compression: 'none',
+                header: false,
+                asSingleFile: false,
+                prefix: null,
+                suffix: '_increment',
+                hasQuotes: false,
+                connectionId: null,
+                runParameters: [],
+              },
+            ],
+            outputobjectdataflowoptions: [
+              {
+                id: 6509937,
+                key: 'autoscalingAlgorithm',
+                value: 'THROUGHPUT_BASED',
+              },
+              {
+                id: 6509942,
+                key: 'hostProjectId',
+                value: '',
+              },
+              {
+                id: 6509935,
+                key: 'machineType',
+                value: 'n1-standard-1',
+              },
+              {
+                id: 6509940,
+                key: 'maxNumWorkers',
+                value: '1000',
+              },
+              {
+                id: 6509936,
+                key: 'network',
+                value: '',
+              },
+              {
+                id: 6509939,
+                key: 'numWorkers',
+                value: '1',
+              },
+              {
+                id: 6509933,
+                key: 'region',
+                value: 'us-central1',
+              },
+              {
+                id: 6509938,
+                key: 'serviceAccount',
+                value: '',
+              },
+              {
+                id: 6509932,
+                key: 'subnetwork',
+                value: '',
+              },
+              {
+                id: 6509941,
+                key: 'usePublicIps',
+                value: 'true',
+              },
+              {
+                id: 6509934,
+                key: 'zone',
+                value: '',
+              },
+            ],
+            outputobjectsparkoptions: [],
+          },
+        ],
+        datasources: [
+          {
+            path: '/industry/price_quote.csv',
+            bucket: 'dasa-raw-zone',
+            userinfo: null,
+            type: 'gs',
+            host: null,
+            isDynamicOrConverted: false,
+            id: 1063432,
+            dynamicPath: null,
+            connectionId: null,
+            isSchematized: true,
+            isDynamic: false,
+            isConverted: false,
+            disableTypeInference: false,
+            hasStructuring: true,
+            parsingScriptId: 2327919,
+            storageLocation: {
+              fullUri: 'gs://dasa-raw-zone/industry/price_quote.csv',
+              id: 14609997,
+              path: '/industry/price_quote.csv',
+              size: 1655249,
+              type: 'gs',
+              bucket: 'dasa-raw-zone',
+              blobHost: null,
+              container: null,
+              hash: '19930be5b569741016b28ac8de457eb17c63511d',
+              host: null,
+              userinfo: null,
+            },
+            runParameters: [],
+          },
+        ],
+        webhookflowtasks: [],
+      },
+    ],
+  },
+  hash: 'gGeiZWlrr6L4Z0d3y39d48texcUEInBM',
+}
