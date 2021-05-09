@@ -23,14 +23,16 @@ A solução adotada foi trabalhar o dado no conceito de data lake com 3 camadas:
 
 **Modelo Conceitual:**
 
-![](media/59dfc646ea941ad92a1045d9a748ea36.png)
+![image](https://user-images.githubusercontent.com/20050770/117561468-8a1cd000-b06d-11eb-85cf-ebea65c61041.png)
+
 
 **Arquitetura:**
 
 **A arquitetura proposta é contém 4 produtos do GCP:** *Cloud Storage, Cloud
 Dataprep, Big Query e Data Studio*
 
-![](media/ec21dbb90126782497f6cfc1aa9313fb.png)
+![image](https://user-images.githubusercontent.com/20050770/117561471-93a63800-b06d-11eb-9ba6-e19201616fa4.png)
+
 
 1.  Arquivos origens são carregados no Cloud Storage no bucket raw zone
 
@@ -45,11 +47,13 @@ Dataprep, Big Query e Data Studio*
 
 **Cloud Data prep:**
 
-![](media/7eac97ed818279451b5c8450e2d58f8a.png)
+![image](https://user-images.githubusercontent.com/20050770/117561480-9b65dc80-b06d-11eb-888b-16055b692907.png)
+
 
 -   **flow-material-bill**
 
-![](media/82f4b3878da04b6d08152e337b07890b.png)
+![image](https://user-images.githubusercontent.com/20050770/117561487-a587db00-b06d-11eb-893b-4ada469207e5.png)
+
 
 **Tratamentos:**
 
@@ -62,11 +66,13 @@ Dataprep, Big Query e Data Studio*
 -   Agrupamento por tube_assembly_id, component_id e sumarização da quantidade
     (quantity), para eliminar duplicidade.
 
-![](media/771ff9702ee5698db791c7d76e26d897.png)
+![image](https://user-images.githubusercontent.com/20050770/117561492-af114300-b06d-11eb-9e3b-89c26660b2ec.png)
+
 
 -   *flow-price-quote*
 
-![](media/9064721caeb94c6cdc33fec85c50bf77.png)
+![image](https://user-images.githubusercontent.com/20050770/117561497-b7697e00-b06d-11eb-861f-e29654278bd2.png)
+
 
 **Tratamentos:**
 
@@ -74,7 +80,8 @@ Dataprep, Big Query e Data Studio*
 
 -   *flow-component*
 
-**![](media/06584d53aad6d21b2e39ac843528241b.png)**
+![image](https://user-images.githubusercontent.com/20050770/117561505-c05a4f80-b06d-11eb-933a-5fb2075640fb.png)
+
 
 **Tratamentos:**
 
@@ -84,18 +91,18 @@ Dataprep, Big Query e Data Studio*
 
 -   Tratamento dos valores 9999 e NA para nulo
 
-![](media/751e962565961df4d9efa00808cae619.png)
+![image](https://user-images.githubusercontent.com/20050770/117561510-cbad7b00-b06d-11eb-836a-dade27b118a1.png)
+
 
 **Bigquery**
 
-**![](media/f65a7acac4335b59c5ac3be2566a604b.png)**
+![image](https://user-images.githubusercontent.com/20050770/117561518-d536e300-b06d-11eb-80b5-df8064857057.png)
+
 
 **Data Studio:**
 
-**![](media/367cba296ca9d72f6a55049773de54a9.png)**
+![image](https://user-images.githubusercontent.com/20050770/117561520-dff17800-b06d-11eb-983e-365f87c95426.png)
+![image](https://user-images.githubusercontent.com/20050770/117561524-e4b62c00-b06d-11eb-9d1e-84060fd0fe2e.png)
+![image](https://user-images.githubusercontent.com/20050770/117561526-e97ae000-b06d-11eb-9c74-371454aaca61.png)
+![image](https://user-images.githubusercontent.com/20050770/117561531-f0095780-b06d-11eb-80be-14b850844c06.png)
 
-**![](media/dc7d2d437d5a8e5c2c0faaa82613c27b.png)**
-
-**![](media/60b44115cf5dff654d441c22f4a08495.png)**
-
-![](media/969984c35f2bba1bc0f9b4205561a8e1.png)
