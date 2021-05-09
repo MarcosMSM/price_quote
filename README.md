@@ -53,6 +53,11 @@ como MAX.
 O Data Studio acessa os dados desta camada para criação do dashboard.
 ```
 
+### Diretórios do projeto:
+
+- data /: arquivos csv de origem
+- db /: view materializadas da refined.
+
 ### Modelo Conceitual Refined Zone:
 
 ![image](https://user-images.githubusercontent.com/20050770/117577400-050ed680-b0c0-11eb-9e54-6e775c2b377a.png)
