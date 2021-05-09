@@ -104,7 +104,7 @@ O Data Studio acessa os dados desta camada para criação do dashboard.
 
 ![image](https://user-images.githubusercontent.com/20050770/117577724-4fdd1e00-b0c1-11eb-9154-ccfb4a1a93f8.png)
 
--   **flow-material-bill**
+**flow-material-bill**
 
 ![image](https://user-images.githubusercontent.com/20050770/117561487-a587db00-b06d-11eb-893b-4ada469207e5.png)
 
@@ -123,7 +123,7 @@ O Data Studio acessa os dados desta camada para criação do dashboard.
 ![image](https://user-images.githubusercontent.com/20050770/117561492-af114300-b06d-11eb-9e3b-89c26660b2ec.png)
 
 
--   *flow-price-quote*
+**flow-price-quote**
 
 ![image](https://user-images.githubusercontent.com/20050770/117561497-b7697e00-b06d-11eb-861f-e29654278bd2.png)
 
@@ -132,7 +132,7 @@ O Data Studio acessa os dados desta camada para criação do dashboard.
 
 -   Conversão de data types
 
--   *flow-component*
+**flow-component**
 
 ![image](https://user-images.githubusercontent.com/20050770/117561505-c05a4f80-b06d-11eb-933a-5fb2075640fb.png)
 
