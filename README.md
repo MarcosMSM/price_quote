@@ -20,10 +20,10 @@ A solução adotada foi trabalhar o dado no conceito de data lake com 3 camadas:
 
 
 **Raw Zone**
-```
-Os arquivos csv, em seu estado bruto, foram armazenados no bucket
-dasa-raw-zone do Google Cloud Storage.
-```
+-   ```
+-   Os arquivos csv, em seu estado bruto, foram armazenados no bucket
+-   dasa-raw-zone do Google Cloud Storage.
+-   ```
 
 **Trusted Zone**
 ```
