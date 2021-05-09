@@ -18,35 +18,40 @@ relatório consumindo os dados inseridos.
 
 A solução adotada foi trabalhar o dado no conceito de data lake com 3 camadas:
 
+
 **Raw Zone**
+```
+Os arquivos csv, em seu estado bruto, foram armazenados no bucket
+dasa-raw-zone do Google Cloud Storage.
+```
 
->   Os arquivos csv, em seu estado bruto, foram armazenados no bucket
->   dasa-raw-zone do Google Cloud Storage.
+**Trusted Zone**
+```
+Posteriormente foi construído um pipeline com Google DataPrep, a fim de
+padronizar, limpar e aplicar unpivot nos dados.
 
->   **Trusted Zone**
+O output do pipeline entrega dados em 2 saídas: tabelas do BigQuery e no
+bucket dasa-trusted-zone do Google Cloud Storage, em formato compactado.
 
->   Posteriormente foi construído um pipeline com Google DataPrep, a fim de
->   padronizar, limpar e aplicar unpivot nos dados.
+No BigQuery é possível consultar a última versão dos dados (com excelente
+desempenho), enquanto no bucket há o histórico completo, com um custo mais
+acessível. Nesse cenário, uma aplicação de ML poderia consumir dados
+```
 
->   O output do pipeline entrega dados em 2 saídas: tabelas do BigQuery e no
->   bucket dasa-trusted-zone do Google Cloud Storage, em formato compactado.
-
->   No BigQuery é possível consultar a última versão dos dados (com excelente
->   desempenho), enquanto no bucket há o histórico completo, com um custo mais
->   acessível. Nesse cenário, uma aplicação de ML poderia consumir dados
 
 **Refined Zone**
+```
+Para fornecer dados na zona dasa-refined-zone, foram criadas views
+materializadas no BigQuery.
 
->   Para fornecer dados na zona dasa-refined-zone, foram criadas views
->   materializadas no BigQuery.
+Adicionalmente, um modelo dimensional snowflake **garante que todos os
+cadastros existentes nesse dataset estejam devidamente disponíveis nas
+dimensões** de *component* e *material,*  o que permitirá agregar os dados
+das fatos com um simples join, **sem a necessidade de aplicar agregações
+como MAX**.
 
->   Adicionalmente, um modelo dimensional snowflake **garante que todos os
->   cadastros existentes nesse dataset estejam devidamente disponíveis nas
->   dimensões** de *component* e *material,*  o que permitirá agregar os dados
->   das fatos com um simples join, **sem a necessidade de aplicar agregações
->   como MAX**.
-
->   O Data Studio acessa os dados desta camada para criação do dashboard.
+O Data Studio acessa os dados desta camada para criação do dashboard.
+```
 
 **Modelo Conceitual Refined Zone:**
 
