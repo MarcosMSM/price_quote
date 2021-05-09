@@ -19,13 +19,13 @@ relatório consumindo os dados inseridos.
 A solução adotada foi trabalhar o dado no conceito de data lake com 3 camadas:
 
 
-**Raw Zone**
--   ```
--   Os arquivos csv, em seu estado bruto, foram armazenados no bucket
--   dasa-raw-zone do Google Cloud Storage.
--   ```
+### 1 - Raw Zone
+```
+Os arquivos csv, em seu estado bruto, foram armazenados no bucket
+dasa-raw-zone do Google Cloud Storage.
+```
 
-**Trusted Zone**
+### 2 - Trusted Zone
 ```
 Posteriormente foi construído um pipeline com Google DataPrep, a fim de
 padronizar, limpar e aplicar unpivot nos dados.
@@ -39,16 +39,16 @@ acessível. Nesse cenário, uma aplicação de ML poderia consumir dados
 ```
 
 
-**Refined Zone**
+### 3 - Refined Zone
 ```
 Para fornecer dados na zona dasa-refined-zone, foram criadas views
 materializadas no BigQuery.
 
-Adicionalmente, um modelo dimensional snowflake **garante que todos os
+Adicionalmente, um modelo dimensional snowflake garante que todos os
 cadastros existentes nesse dataset estejam devidamente disponíveis nas
-dimensões** de *component* e *material,*  o que permitirá agregar os dados
-das fatos com um simples join, **sem a necessidade de aplicar agregações
-como MAX**.
+dimensões de component e material,  o que permitirá agregar os dados
+das fatos com um simples join, sem a necessidade de aplicar agregações
+como MAX.
 
 O Data Studio acessa os dados desta camada para criação do dashboard.
 ```
